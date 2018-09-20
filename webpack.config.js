@@ -20,7 +20,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css/,
+                test: /\.css$/,
                 exclude: /node_modules/,
                 use: [
                     { loader: "style-loader" },
@@ -45,6 +45,10 @@ module.exports = {
                                 })
                             ]
                         }
+                     },
+                     {
+                         test: /\.(png|jpe?g|gif)$/,
+                         loader: "url-loader?limit=8000&name=images/[name].[ext]"
                      }
                 ]
             }
